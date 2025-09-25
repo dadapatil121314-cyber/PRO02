@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MUZE COW SALE - गाय व्यापार का विश्वसनीय प्लेटफॉर्म</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        :root {
+            --primary: #8B4513;
+            --secondary: #D2691E;
+            --light: #F5F5DC;
+            --dark: #654321;
+            --accent: #CD853F;
+        }
+        
+        body {
+            background-color: #f9f9f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        header {
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            color: white;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--light);
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            padding: 5px 10px;
+            border-radius: 4px;
+        }
+        
+        nav ul li a:hover {
+            background-color: rgba(255,255,255,0.2);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1534330192326-0f78dfcacca8?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background-color: var(--secondary);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        
+        .about-text {
+            flex: 1;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .about-text p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-image:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Services Section */
+        .services {
+            background-color: var(--light);
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            background-color: var(--primary);
+            color: white;
+            font-size: 2.5rem;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        /* Cows Section */
+        .cows-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .cow-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .cow-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .cow-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .cow-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .cow-card:hover .cow-image img {
+            transform: scale(1.1);
+        }
+        
+        .cow-details {
+            padding: 20px;
+        }
+        
+        .cow-details h3 {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .cow-price {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 10px 0;
+        }
+        
+        .cow-features {
+            list-style: none;
+            margin: 15px 0;
+        }
+        
+        .cow-features li {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .cow-features li i {
+            color: var(--secondary);
+            margin-right: 8px;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--light);
+        }
+        
+        .contact-content {
+            display: flex;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            flex: 1;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .contact-details {
+            margin-bottom: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-item i {
+            font-size: 1.2rem;
+            color: var(--primary);
+            margin-right: 15px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        .contact-form {
+            flex: 1;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        .form-group textarea {
+            height: 150px;
+            resize: vertical;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 50px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background-color: var(--secondary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .about-content,
+            .contact-content {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--primary);
+                flex-direction: column;
+                padding: 20px 0;
+                text-align: center;
+            }
+            
+            nav ul.active {
+                display: flex;
+            }
+            
+            nav ul li {
+                margin: 10px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 70px 0;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <div class="logo-icon">
+                        <i class="fas fa-cow"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>MUZE COW SALE</h1>
+                        <p>गाय व्यापार का विश्वसनीय प्लेटफॉर्म</p>
+                    </div>
+                </div>
+                <nav>
+                    <div class="mobile-menu">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                    <ul>
+                        <li><a href="#home">होम</a></li>
+                        <li><a href="#about">हमारे बारे में</a></li>
+                        <li><a href="#services">सेवाएं</a></li>
+                        <li><a href="#cows">गायें</a></li>
+                        <li><a href="#contact">संपर्क करें</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h2>गुणवत्तापूर्ण गायों का विश्वसनीय बाजार</h2>
+            <p>MUZE COW SALE में आपको मिलेंगी स्वस्थ और उच्च गुणवत्ता वाली गायें। हमारा मिशन है किसानों को सही दाम पर बेहतरीन गायें उपलब्ध कराना।</p>
+            <a href="#cows" class="btn">गायें देखें</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>हमारे बारे में</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>MUZE COW SALE - गाय व्यापार में 15+ वर्षों का अनुभव</h3>
+                    <p>हमारी शुरुआत 2008 में एक छोटे से गाँव से हुई थी और आज हम पूरे राज्य में गाय व्यापार के विश्वसनीय नाम बन चुके हैं।</p>
+                    <p>हमारा उद्देश्य है किसानों को स्वस्थ और उत्पादक गायें उचित मूल्य पर उपलब्ध कराना। हमारी टीम में पशु चिकित्सक और पशु विशेषज्ञ शामिल हैं जो प्रत्येक गाय की स्वास्थ्य जांच करते हैं।</p>
+                    <p>हमारे पास विभिन्न नस्लों की गायें उपलब्ध हैं जैसे गिर, साहीवाल, थारपारकर, राठी और संकर नस्लें।</p>
+                    <a href="#contact" class="btn">संपर्क करें</a>
+                </div>
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="About MUZE COW SALE">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>हमारी सेवाएं</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>गाय की बिक्री</h3>
+                        <p>विभिन्न नस्लों की स्वस्थ और उत्पादक गायों की बिक्री। प्रत्येक गाय की पूरी स्वास्थ्य जांच की जाती है।</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-truck"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>मुफ्त डिलीवरी</h3>
+                        <p>100 किमी के दायरे में गायों की मुफ्त डिलीवरी की सुविधा। सुरक्षित और आरामदायक परिवहन।</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>वित्त सहायता</h3>
+                        <p>गाय खरीदने के लिए बैंक लोन और किस्तों की सुविधा। हम आवश्यक कागजात में मदद करते हैं।</p>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-md"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>पशु चिकित्सा सहायता</h3>
+                        <p>खरीद के बाद 3 महीने तक मुफ्त पशु चिकित्सा सलाह। आपातकालीन स्थिति में डॉक्टर की सुविधा।</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Cows Section -->
+    <section id="cows">
+        <div class="container">
+            <div class="section-title">
+                <h2>उपलब्ध गायें</h2>
+            </div>
+            <div class="cows-grid">
+                <div class="cow-card">
+                    <div class="cow-image">
+                        <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Gir Cow">
+                    </div>
+                    <div class="cow-details">
+                        <h3>गिर नस्ल</h3>
+                        <div class="cow-price">₹ 60,000 - ₹ 1,20,000</div>
+                        <ul class="cow-features">
+                            <li><i class="fas fa-check"></i> उत्पादन: 10-15 लीटर/दिन</li>
+                            <li><i class="fas fa-check"></i> आयु: 3-5 वर्ष</li>
+                            <li><i class="fas fa-check"></i> स्वास्थ्य: पूर्णतया स्वस्थ</li>
+                            <li><i class="fas fa-check"></i> टीकाकरण: पूर्ण</li>
+                        </ul>
+                        <a href="#contact" class="btn">अधिक जानकारी</a>
+                    </div>
+                </div>
+                <div class="cow-card">
+                    <div class="cow-image">
+                        <img src="https://images.unsplash.com/photo-1564087040901-93cc0d9677e3?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Sahiwal Cow">
+                    </div>
+                    <div class="cow-details">
+                        <h3>साहीवाल नस्ल</h3>
+                        <div class="cow-price">₹ 50,000 - ₹ 90,000</div>
+                        <ul class="cow-features">
+                            <li><i class="fas fa-check"></i> उत्पादन: 8-12 लीटर/दिन</li>
+                            <li><i class="fas fa-check"></i> आयु: 2-4 वर्ष</li>
+                            <li><i class="fas fa-check"></i> स्वास्थ्य: पूर्णतया स्वस्थ</li>
+                            <li><i class="fas fa-check"></i> टीकाकरण: पूर्ण</li>
+                        </ul>
+                        <a href="#contact" class="btn">अधिक जानकारी</a>
+                    </div>
+                </div>
+                <div class="cow-card">
+                    <div class="cow-image">
+                        <img src="https://images.unsplash.com/photo-1565299722922-0d6f3483f029?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hybrid Cow">
+                    </div>
+                    <div class="cow-details">
+                        <h3>संकर नस्ल</h3>
+                        <div class="cow-price">₹ 40,000 - ₹ 70,000</div>
+                        <ul class="cow-features">
+                            <li><i class="fas fa-check"></i> उत्पादन: 12-18 लीटर/दिन</li>
+                            <li><i class="fas fa-check"></i> आयु: 3-6 वर्ष</li>
+                            <li><i class="fas fa-check"></i> स्वास्थ्य: पूर्णतया स्वस्थ</li>
+                            <li><i class="fas fa-check"></i> टीकाकरण: पूर्ण</li>
+                        </ul>
+                        <a href="#contact" class="btn">अधिक जानकारी</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>संपर्क करें</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h3>हमसे संपर्क करें</h3>
+                    <p>गाय खरीदने या किसी भी जानकारी के लिए नीचे दिए गए विवरणों के माध्यम से हमसे संपर्क करें।</p>
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>पता</h4>
+                                <p>गाँव: रामपुर, जिला: सीतापुर, उत्तर प्रदेश - 261001</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h4>फोन नंबर</h4>
+                                <p>+91 98765 43210, +91 98765 43211</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>ईमेल</h4>
+                                <p>info@muzecowsale.com</p>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-clock"></i>
+                            <div>
+                                <h4>कार्य समय</h4>
+                                <p>सोमवार - शनिवार: सुबह 9:00 - शाम 7:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>संदेश भेजें</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">आपका नाम</label>
+                            <input type="text" id="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">फोन नंबर</label>
+                            <input type="tel" id="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cow-type">गाय की नस्ल में रुचि</label>
+                            <select id="cow-type">
+                                <option value="">चुनें</option>
+                                <option value="gir">गिर</option>
+                                <option value="sahiwal">साहीवाल</option>
+                                <option value="tharparkar">थारपारकर</option>
+                                <option value="hybrid">संकर नस्ल</option>
+                                <option value="other">अन्य</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">संदेश</label>
+                            <textarea id="message" placeholder="आपका संदेश यहाँ लिखें..."></textarea>
+                        </div>
+                        <button type="submit" class="btn">संदेश भेजें</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>MUZE COW SALE</h3>
+                    <p>गाय व्यापार में 15+ वर्षों का अनुभव। हम किसानों को उच्च गुणवत्ता वाली गायें उचित मूल्य पर उपलब्ध कराते हैं।</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>त्वरित लिंक</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">होम</a></li>
+                        <li><a href="#about">हमारे बारे में</a></li>
+                        <li><a href="#services">सेवाएं</a></li>
+                        <li><a href="#cows">गायें</a></li>
+                        <li><a href="#contact">संपर्क करें</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>हमारी सेवाएं</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">गाय की बिक्री</a></li>
+                        <li><a href="#">मुफ्त डिलीवरी</a></li>
+                        <li><a href="#">वित्त सहायता</a></li>
+                        <li><a href="#">पशु चिकित्सा सहायता</a></li>
+                        <li><a href="#">गाय पालन प्रशिक्षण</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>संपर्क जानकारी</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> रामपुर, सीतापुर, उत्तर प्रदेश</li>
+                        <li><i class="fas fa-phone"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope"></i> info@muzecowsale.com</li>
+                        <li><i class="fas fa-clock"></i> सोम-शनि: 9:00 - 19:00</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 MUZE COW SALE. सर्वाधिकार सुरक्षित।</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
+        });
+        
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('आपका संदेश सफलतापूर्वक भेज दिया गया है। हम जल्द ही आपसे संपर्क करेंगे।');
+            this.reset();
+        });
+        
+        // Smooth Scrolling for Anchor Links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.querySelector('nav ul').classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
